@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "name": "myawsome_frame_js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
