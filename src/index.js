@@ -41,37 +41,37 @@ class Lightjs_Virtual_DOM extends Lightjs_Node {
        }
        return pointer
     }
-    UpdateRealDom(pointer){
-
-    }
 
 }
 
 class Lightjs { 
     constructor(){
-        this.virtualDom = new Lightjs_Virtual_DOM()
-        this.virtualDom.Set_root(this)
+        this.effects = []
+        this.virtualDom = new Lightjs_Virtual_DOM("",this)
 
+        
         //for rerender
-        console.log(this.virtualDom.html_result)
-        document.body.innerHTML = this.virtualDom.html_result
+        this.render()
+        
         
     }
-    
-
     add_effect(function_){
-
+       this.effects.push(function_)
     }
 
     run_effects(){
-
+      this.effects.forEach((effect) => {
+        effect()
+      })
+      this.effects = []
     }
 
     render(){
         this.virtualDom.render_element()
-        run_effects()
+        document.body.innerHTML = this.virtualDom.html_result
+        this.run_effects()
     }
-
+    
     rerender(address){
        // first rerender the adress
        let rerenderroot = address

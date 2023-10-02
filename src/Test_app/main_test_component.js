@@ -20,8 +20,8 @@ class TaskTrackerPage extends Lightjs_Node{
         )
     }
     change_number_of_task(add_amount){
-       console.log("hello world")
-       
+       this.states["tasks"].push("")
+       this.Root.render()
     }
 }
 
@@ -40,10 +40,18 @@ class TaskDisplayer_box extends Lightjs_Node{
 
 }
 class TaskUpdate_button extends Lightjs_Node{
+    Init(props){
+      
+
+    }
     render(props){
+        this.Root.add_effect(()=>{
+            document.getElementById('next_button').addEventListener("click", ()=>{
+                props["taskupdater"]()
+            })
+        })
         let data_string = ""
-        
-        return `<button>${this.Root.name}</button>`
+        return `<button id = 'next_button'></button>`
         
     }
     buttonClick(){

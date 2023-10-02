@@ -12,7 +12,7 @@ class Lightjs_Node {
         this.states = {}
         this.stateupdater = {}
         
-        this.Init()
+        this.Init(props)
 
         this.html_result = ""
     }
