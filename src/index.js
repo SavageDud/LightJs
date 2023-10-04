@@ -46,15 +46,28 @@ class Lightjs_Virtual_DOM extends Lightjs_Node {
 
 class Lightjs { 
     constructor(){
+        this.rout = this.get_currentrout()
         this.effects = []
         this.virtualDom = new Lightjs_Virtual_DOM("",this)
-
+        
         
         //for rerender
         this.render()
         
         
     }
+
+    get_currentrout(){
+        let location = window.location.href
+        console.log(location)
+       return location
+    }
+    
+    async Root_fetch(address_ , callback_){
+        let result_ = fetch(address_)
+        result_.then((data) => {callback_()})
+    }
+
     add_effect(function_){
        this.effects.push(function_)
     }
