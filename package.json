@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "http-server C:/Users/sukho/OneDrive/Documents/github/MyAwsome_frame_js/dist/index.html"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "webpack": "^5.88.2",
