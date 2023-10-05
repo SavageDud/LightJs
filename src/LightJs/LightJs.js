@@ -40,7 +40,6 @@ class Lightjs_Virtual_DOM extends Lightjs_Node {
 
 class Lightjs { 
     constructor(app_class){
-        this.rout = this.get_currentrout()
         this.effects = []
         this.virtualDom = new Lightjs_Virtual_DOM("",this,{_app_class : app_class})
         
