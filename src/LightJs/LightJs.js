@@ -34,13 +34,7 @@ class Lightjs_Virtual_DOM extends Lightjs_Node {
             <div>${this.children[0].html_result}</div>
         `)
     }
-    Get_node_with_adress (address) {
-       let pointer;
-       for (let char_ind; char_ind < address.lenght ; char_ind++){
-           pointer = pointer.children[parseInt(address[char_ind])]
-       }
-       return pointer
-    }
+    
 
 }
 

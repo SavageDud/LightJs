@@ -40,14 +40,7 @@ class Lightjs_Node {
     wrap_result_inside_id(result){
         return `div id = 'LightJS_ID:${this.address}'>${result}</div>`
     }
-    rerender(){
-        // rerender is a function that will be called when needed to rerender
-        // this will either return true or false depending wether the children need to be rerendered
-        
-        if(this.render() == this.html_result){return false}
-        return true
-    }
-
+   
     render(props){
          
     }
