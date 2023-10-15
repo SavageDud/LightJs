@@ -3,26 +3,23 @@ class Lightjs_Node {
         
 
         this.Root = Root
-        this.address = address
-        this.name = ""
+        this.Address = address
+        this.Name = ""
 
 
         this.children = []
-
-        this.states = {}
-        this.stateupdater = {}
+        this.html_result = ""
         
         this.Init(props)
 
-        this.html_result = ""
     }
     
-    render_element(props){
-        this.html_result = this.render(props)
+    Render_Element(props){
+        this.html_result = this.Render(props)
     }
     
 
-    remove_children_with_name(name){
+    Remove_Children_With_Name(name){
 
         this.children.forEach((child , index)=> {
             if(child.name = name){
@@ -34,29 +31,24 @@ class Lightjs_Node {
         
     }
 
-    create_child(new_element , props = {}){
+    Create_Child(new_element , props = {}){
         this.children.push( new new_element(this.address + this.children.length.toString() , this.Root , props))
     }
-    wrap_result_inside_id(result){
+    Wrap_result_inside_id(result){
         return `div id = 'LightJS_ID:${this.address}'>${result}</div>`
     }
-   
-    render(props){
+    
+    Render(props){
          
     }
     
     
 
-    invoke_rerender(){
+    Invoke_Rerender(){
        this.Root.rerender(address)
     }
     
-    create_state_(key , Init_data){
-        if(key != null){
-            this.states[key] = Init_data
-            this.stateupdater[key] = ()=> {this.invoke_rerender();}
-        }
-    }
+   
 }
 
 export default (Lightjs_Node)

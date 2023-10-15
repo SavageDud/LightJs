@@ -24,11 +24,11 @@ class Lightjs_Virtual_DOM extends Lightjs_Node {
     }
     Init(props){
         this.name = "ROOT"
-        this.create_child(props._app_class)
+        this.Create_Child(props._app_class)
 
     }
-    render(){
-        this.children[0].render_element()
+    Render(){
+        this.children[0].Render_Element()
         
         return(`
             <div>${this.children[0].html_result}</div>
@@ -45,44 +45,29 @@ class Lightjs {
         
         
         //for rerender
-        this.render()
+        this.Render()
         
         
     }
 
-    get_currentrout(){
-        let location = window.location.href
-        console.log(location)
-       return location
-    }
     
-    async Root_fetch(address_ , callback_){
-        let result_ = fetch(address_)
-        result_.then((data) => {callback_()})
-    }
-
-    add_effect(function_){
+    Add_Effect(function_){
        this.effects.push(function_)
     }
 
-    run_effects(){
+    Run_Effects(){
       this.effects.forEach((effect) => {
         effect()
       })
       this.effects = []
     }
 
-    render(){
-        this.virtualDom.render_element()
+    Render(){
+        this.virtualDom.Render_Element()
         document.body.innerHTML = this.virtualDom.html_result
-        this.run_effects()
+        this.Run_Effects()
     }
     
-    rerender(address){
-       // first rerender the adress
-       let rerenderroot = address
-    }
-
 }
 
 

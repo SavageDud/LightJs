@@ -1,0 +1,21 @@
+body{
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    background-color: #FFBBBB;
+    
+}
+.main_container{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.display_flex{
+    display: flex;
+}
+.display_block{
+    display: block;
+}
